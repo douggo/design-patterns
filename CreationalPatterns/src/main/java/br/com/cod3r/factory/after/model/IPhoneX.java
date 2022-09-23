@@ -10,4 +10,9 @@ public class IPhoneX extends IPhone {
 		System.out.println("\t- 3Gb RAM");
 		System.out.println("\t- 256Gb Memory");
 	}
+
+	@Override
+	public String toString() {
+		return super.toString().concat(" X");
+	}
 }

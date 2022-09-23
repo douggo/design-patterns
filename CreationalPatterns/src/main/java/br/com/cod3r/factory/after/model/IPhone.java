@@ -15,4 +15,10 @@ public abstract class IPhone {
 	public void pack() {
 		System.out.println("Packing the device");
 	}
+
+	@Override
+	public String toString() {
+		return "iPhone";
+	}
+
 }
