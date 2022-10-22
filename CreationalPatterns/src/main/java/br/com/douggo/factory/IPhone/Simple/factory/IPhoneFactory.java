@@ -2,7 +2,6 @@ package br.com.douggo.factory.IPhone.Simple.factory;
 
 import br.com.douggo.factory.IPhone.Simple.enums.IPhoneModels;
 import br.com.douggo.factory.IPhone.Simple.model.*;
-import br.com.douggo.factory.Simple.model.*;
 
 public class IPhoneFactory {
 

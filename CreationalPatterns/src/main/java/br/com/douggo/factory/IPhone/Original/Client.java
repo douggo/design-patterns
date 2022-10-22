@@ -1,7 +1,6 @@
 package br.com.douggo.factory.IPhone.Original;
 
 import br.com.douggo.factory.IPhone.Original.factory.*;
-import br.com.douggo.factory.Original.factory.*;
 import br.com.douggo.factory.IPhone.Original.model.IPhone;
 
 public class Client {
