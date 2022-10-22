@@ -1,4 +1,6 @@
-package br.com.douggo.factory.original.model;
+package br.com.douggo.factory.HalfSimple.model;
+
+import br.com.douggo.factory.HalfSimple.enums.IPhoneModels;
 
 public class IPhone11Pro extends IPhone {
 
@@ -13,7 +15,7 @@ public class IPhone11Pro extends IPhone {
 
 	@Override
 	public String toString() {
-		return super.toString().concat(" 11 Pro");
+		return super.toString().concat(IPhoneModels.IPHONE_11_PRO.getModelName());
 	}
 
 }

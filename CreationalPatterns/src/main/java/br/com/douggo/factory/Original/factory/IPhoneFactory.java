@@ -1,6 +1,6 @@
-package br.com.douggo.factory.original.factory;
+package br.com.douggo.factory.Original.factory;
 
-import br.com.douggo.factory.original.model.IPhone;
+import br.com.douggo.factory.Original.model.IPhone;
 
 public abstract class IPhoneFactory {
 
