@@ -1,4 +1,4 @@
-package br.com.cod3r.factory.after.model;
+package br.com.douggo.factory.HalfSimple.model;
 
 public abstract class IPhone {
 	
@@ -18,7 +18,7 @@ public abstract class IPhone {
 
 	@Override
 	public String toString() {
-		return "iPhone";
+		return "iPhone ";
 	}
 
 }

@@ -1,6 +1,6 @@
-package br.com.cod3r.factory.after.factory;
+package br.com.douggo.factory.Original.factory;
 
-import br.com.cod3r.factory.after.model.IPhone;
+import br.com.douggo.factory.Original.model.IPhone;
 
 public abstract class IPhoneFactory {
 
