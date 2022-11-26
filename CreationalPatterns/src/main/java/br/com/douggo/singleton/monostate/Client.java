@@ -15,7 +15,7 @@ public class Client {
 		Connection connection = getConnection();
 		if(connection != null) {
 			connection.query("SELECT * FROM A1");
-			leaveConnection(connection);
+			//leaveConnection(connection); -> Para disparar a mensagem de conexões não disponíveis
 		}
 	}
 	
@@ -23,7 +23,7 @@ public class Client {
 		Connection connection = getConnection();
 		if(connection != null) {
 			connection.query("SELECT * FROM A2");
-			leaveConnection(connection);
+			//leaveConnection(connection); -> Para disparar a mensagem de conexões não disponíveis
 		}
 	}
 	
@@ -36,12 +36,12 @@ public class Client {
 	}
 
 	private static Connection getConnection() {
-		ConnectionPool pool = ConnectionPool.getInstance();
+		ConnectionPool pool = new ConnectionPool();
 		return pool.getConnection();
 	}
 
 	private static void leaveConnection(Connection connection) {
-		ConnectionPool pool = ConnectionPool.getInstance();
+		ConnectionPool pool = new ConnectionPool();
 		pool.leaveConnection(connection);
 	}
 
