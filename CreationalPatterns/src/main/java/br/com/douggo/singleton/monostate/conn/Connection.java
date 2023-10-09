@@ -1,7 +1,7 @@
 package br.com.douggo.singleton.monostate.conn;
 
 public class Connection {
-private boolean inUse;
+	private boolean inUse;
 	
 	public Connection() {
 		inUse = false;
