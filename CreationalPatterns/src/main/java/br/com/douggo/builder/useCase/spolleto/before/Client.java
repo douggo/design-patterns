@@ -1,7 +1,7 @@
-package br.com.douggo.builder.useCase.before;
+package br.com.douggo.builder.useCase.spolleto.before;
 
-import br.com.douggo.builder.useCase.before.model.Pasta;
-import br.com.douggo.builder.useCase.before.model.Size;
+import br.com.douggo.builder.useCase.spolleto.before.model.Pasta;
+import br.com.douggo.builder.useCase.spolleto.before.model.Size;
 
 import java.util.Arrays;
 import java.util.Collections;

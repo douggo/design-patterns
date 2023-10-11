@@ -1,4 +1,4 @@
-package br.com.douggo.builder.useCase.before.model;
+package br.com.douggo.builder.useCase.spolleto.before.model;
 
 import java.util.List;
 
