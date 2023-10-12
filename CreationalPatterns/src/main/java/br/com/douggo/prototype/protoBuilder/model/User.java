@@ -1,9 +1,9 @@
 package br.com.douggo.prototype.protoBuilder.model;
 
 public class User {
-	private String name;
-	private Integer age;
-	private Address address;
+	private final String name;
+	private final Integer age;
+	private final Address address;
 	
 	public User(String name, Integer age, Address address) {
 		super();

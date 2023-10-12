@@ -1,8 +1,8 @@
 package br.com.douggo.prototype.protoBuilder.model;
 
 public class Address {
-	private String street;
-	private Integer number;
+	private final String street;
+	private final Integer number;
 	
 	public Address(String street, Integer number) {
 		super();
