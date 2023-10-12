@@ -1,6 +1,6 @@
 package br.com.douggo.prototype.protoBuilder.model;
 
-public class User {
+public class User implements Cloneable {
 	private final String name;
 	private final Integer age;
 	private final Address address;
@@ -27,5 +27,10 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [name=" + name + ", age=" + age + ", address=" + address + "]";
+	}
+
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();
 	}
 }
