@@ -1,6 +1,6 @@
 package br.com.douggo.prototype.protoBuilder.model;
 
-public class Address implements Cloneable {
+public class Address {
 	private final String street;
 	private final Integer number;
 	
@@ -23,8 +23,29 @@ public class Address implements Cloneable {
 		return "Address [street=" + street + ", number=" + number + "]";
 	}
 
-	@Override
-	public Object clone() throws CloneNotSupportedException {
-		return super.clone();
+	public static class Builder {
+		private String street;
+		private Integer number;
+
+		public Builder(String street, Integer number) {
+			this.street = street;
+			this.number = number;
+		}
+
+		public Builder street(String name) {
+			this.street = street;
+			return this;
+		}
+
+		public Builder number(Integer number) {
+			this.number = number;
+			return this;
+		}
+
+		public Address build() {
+			return new Address(this.street, this.number);
+		}
+
 	}
+
 }
