@@ -1,7 +1,7 @@
-package br.com.douggo.facade.callCenter.services;
+package br.com.douggo.facade.before.services;
 
-import br.com.douggo.facade.callCenter.model.Card;
-import br.com.douggo.facade.callCenter.model.Register;
+import br.com.douggo.facade.before.model.Card;
+import br.com.douggo.facade.before.model.Register;
 
 import java.util.List;
 

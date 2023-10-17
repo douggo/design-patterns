@@ -1,4 +1,4 @@
-package br.com.douggo.facade.callCenter.model;
+package br.com.douggo.facade.before.model;
 
 public class Card {
 	private Long userNumber;
