@@ -1,5 +1,9 @@
 package br.com.douggo.facade.after;
 
+import br.com.douggo.facade.after.model.Card;
+import br.com.douggo.facade.after.model.Register;
+import br.com.douggo.facade.after.services.*;
+
 import java.util.List;
 
 public class Client {

@@ -1,4 +1,6 @@
-package br.com.douggo.facade.after;
+package br.com.douggo.facade.after.services;
+
+import br.com.douggo.facade.after.model.Card;
 
 import java.util.HashMap;
 import java.util.Map;

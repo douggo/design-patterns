@@ -1,4 +1,4 @@
-package br.com.douggo.facade.after;
+package br.com.douggo.facade.after.model;
 
 import java.util.Date;
 

@@ -1,4 +1,7 @@
-package br.com.douggo.facade.after;
+package br.com.douggo.facade.after.services;
+
+import br.com.douggo.facade.after.model.Card;
+import br.com.douggo.facade.after.model.Register;
 
 import java.util.*;
 

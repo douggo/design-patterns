@@ -1,4 +1,4 @@
-package br.com.douggo.facade.after;
+package br.com.douggo.facade.after.model;
 
 public class Card {
 	private Long userNumber;
