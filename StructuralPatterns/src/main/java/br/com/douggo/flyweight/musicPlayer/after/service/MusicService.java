@@ -34,7 +34,6 @@ public class MusicService {
 	}
 
 	public void report() {
-		int musicInMemory = 0;
 		Set<String> users = memory.keySet();
 		for(String user: users) {
 			int timeCounter = 0;
@@ -48,7 +47,6 @@ public class MusicService {
 						music.getPlayerQty()
 				);
 				timeCounter += (music.getPlayerQty() * music.getMusic().getDuration());
-				musicInMemory++;
 			}
 			System.out.printf("%s has listen music for %d seconds%n", user, timeCounter);
 		}
