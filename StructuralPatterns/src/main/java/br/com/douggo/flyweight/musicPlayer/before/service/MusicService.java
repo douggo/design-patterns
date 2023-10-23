@@ -1,6 +1,6 @@
-package br.com.douggo.flyweight.musicPlayer.service;
+package br.com.douggo.flyweight.musicPlayer.before.service;
 
-import br.com.douggo.flyweight.musicPlayer.model.Music;
+import br.com.douggo.flyweight.musicPlayer.before.model.Music;
 
 import java.util.Collection;
 import java.util.HashMap;

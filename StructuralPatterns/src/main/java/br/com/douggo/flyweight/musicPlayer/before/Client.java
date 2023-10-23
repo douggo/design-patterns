@@ -1,6 +1,6 @@
-package br.com.douggo.flyweight.musicPlayer;
+package br.com.douggo.flyweight.musicPlayer.before;
 
-import br.com.douggo.flyweight.musicPlayer.service.MusicService;
+import br.com.douggo.flyweight.musicPlayer.before.service.MusicService;
 
 public class Client {
 

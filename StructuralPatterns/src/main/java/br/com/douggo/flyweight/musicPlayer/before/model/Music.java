@@ -1,4 +1,4 @@
-package br.com.douggo.flyweight.musicPlayer.model;
+package br.com.douggo.flyweight.musicPlayer.before.model;
 
 public class Music {
 	private String name;
