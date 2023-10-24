@@ -1,7 +1,7 @@
 package br.com.douggo.proxy.remoteResource;
 
 import br.com.douggo.proxy.remoteResource.services.Resource;
-import br.com.douggo.proxy.remoteResource.services.ResourceImpl;
+import br.com.douggo.proxy.remoteResource.services.ResourceProxy;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,9 +11,10 @@ import java.util.Date;
 public class Client {
 
 	public static void main(String[] args) throws InterruptedException, IOException {
-		Resource resource = new ResourceImpl();
+		String token = "v@lid!";
 		BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
 		boolean exit = false;
+		Resource resource = new ResourceProxy(token);
 		while(true) {
 			System.out.print("This is your options?:\n\t1-Current date"
 					+ "\n\t...Other Options\n\t9-Get Resource's data"
