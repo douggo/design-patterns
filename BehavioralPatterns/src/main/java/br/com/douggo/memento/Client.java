@@ -1,6 +1,7 @@
 package br.com.douggo.memento;
 
 import br.com.douggo.memento.component.TextAreaWithMemory;
+import br.com.douggo.memento.memory.Caretaker;
 
 import javax.swing.*;
 import java.awt.*;
@@ -33,7 +34,38 @@ public class Client {
 		bottomPanel.add(save);
 		
 		frame.add(bottomPanel, BorderLayout.SOUTH);
-		
+
+		Caretaker caretaker = new Caretaker();
+
+		save.addActionListener(e -> {
+			caretaker.add(originator.save());
+			mementosList.addItem(caretaker.getHistoryList().size() + "");
+			mementosList.setSelectedItem(caretaker.getHistoryList().size() + "");
+			originator.requestFocusInWindow();
+		});
+
+		mementosList.addItemListener(e -> {
+			originator.restore((TextAreaWithMemory.TextAreaMemento) caretaker.get(mementosList.getSelectedIndex()));
+			originator.requestFocusInWindow();
+		});
+
+		next.addActionListener(e -> {
+			if (mementosList.getSelectedIndex() < mementosList.getItemCount() - 1) {
+				int nextItem = mementosList.getSelectedIndex() + 1;
+				originator.restore((TextAreaWithMemory.TextAreaMemento) caretaker.get(nextItem));
+				mementosList.setSelectedIndex(nextItem);
+				originator.requestFocusInWindow();
+			}
+		});
+
+		previous.addActionListener(e -> {
+			if (mementosList.getSelectedIndex() > 0) {
+				int previousItem = mementosList.getSelectedIndex() - 1;
+				originator.restore((TextAreaWithMemory.TextAreaMemento) caretaker.get(previousItem));
+				mementosList.setSelectedIndex(previousItem);
+				originator.requestFocusInWindow();
+			}
+		});
 		
 		frame.setSize(400,200);  
 		frame.setVisible(true);
