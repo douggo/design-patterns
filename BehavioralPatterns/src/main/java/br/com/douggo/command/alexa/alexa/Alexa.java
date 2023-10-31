@@ -1,5 +1,6 @@
 package br.com.douggo.command.alexa.alexa;
 
+import br.com.douggo.command.alexa.commands.Command;
 import br.com.douggo.command.alexa.lights.PhillipsHueLight;
 import br.com.douggo.command.alexa.lights.XiaomiLight;
 
@@ -7,34 +8,32 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Alexa {
-	private Map<String, Object> integrations;
-	
-	public Alexa() {
-		integrations = new HashMap<String, Object>();
-		integrations.put("LivingRoomLight", new PhillipsHueLight());
-		integrations.put("KitchenLight", new XiaomiLight());
-	}
+    private final Map<String, Object> integrations;
 
-	public void sendRequest(String request) {
-		if(request.equals("Turn on the Living room light")) {
-			System.out.println("Turnning on the Living room light");
-			PhillipsHueLight light = (PhillipsHueLight) integrations.get("LivingRoomLight");
-			light.turnOn();
-		} else if(request.equals("Turn off the Living room light")) {
-			System.out.println("Turnning off the Living room light");
-			PhillipsHueLight light = (PhillipsHueLight) integrations.get("LivingRoomLight");
-			light.turnOff();
-		} else if(request.equals("Turn on the Kitchen light")) {
-			System.out.println("Turnning on the Kitchen light");
-			XiaomiLight light = (XiaomiLight) integrations.get("KitchenLight");
-			light.turnOn();
-		} else if(request.equals("Turn off the Kitchen light")) {
-			System.out.println("Turnning off the Kitchen light");
-			XiaomiLight light = (XiaomiLight) integrations.get("KitchenLight");
-			light.turnOff();
-		} else {
-			System.out.println("Sorry, I can't perform your request!");
-		}
-			 
-	}
+    private final AlexaAI artificialIntelligence;
+
+    public Alexa() {
+        this.integrations = new HashMap<>();
+        this.artificialIntelligence = new AlexaAI();
+    }
+
+    public void addIntegration(String voiceCommand, Command command, String... keywords) {
+        this.integrations.put(voiceCommand, command);
+        this.artificialIntelligence.addAssociation(voiceCommand, keywords);
+    }
+
+    public void sendRequest(String voiceCommand) {
+        Command command = (Command) integrations.get(voiceCommand);
+        if (command == null) {
+            String key = this.artificialIntelligence.findAssociations(voiceCommand);
+            command = (Command) this.integrations.get(key);
+            if (command == null) {
+                System.out.println("Sorry, I couldn't perform your request!");
+                return;
+            }
+        }
+        System.out.println("Sent a generic command as you saved in my configurations");
+        command.execute();
+    }
+
 }

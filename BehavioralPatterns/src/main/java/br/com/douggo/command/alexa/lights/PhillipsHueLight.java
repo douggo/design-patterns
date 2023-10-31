@@ -1,6 +1,6 @@
 package br.com.douggo.command.alexa.lights;
 
-public class PhillipsHueLight {
+public class PhillipsHueLight implements GenericLight {
 	
 	public void turnOn() {
 		System.out.println("The PhillipsHueLight is On");
