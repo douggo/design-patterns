@@ -39,5 +39,19 @@ public class Client {
 		tool.down();
 		System.out.println(database);
 		tool.down();
+
+		System.out.println();
+
+		System.out.println("Database before running migrations: " + database);
+		System.out.println("Running migrations...");
+		tool.latest();
+		System.out.println(database);
+
+		System.out.println();
+
+		System.out.println("Current state of database: " + database);
+		System.out.println("Undoing all migrations");
+		tool.reset();
+		System.out.println(database);
 	}
 }

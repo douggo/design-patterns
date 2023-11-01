@@ -38,4 +38,16 @@ public class MigrationTool {
         }
     }
 
+    public void latest() {
+        while(this.migrationIndex < this.migrations.size()) {
+            this.up();
+        }
+    }
+
+    public void reset() {
+        while(this.migrationIndex != 0) {
+            this.down();
+        }
+    }
+
 }
