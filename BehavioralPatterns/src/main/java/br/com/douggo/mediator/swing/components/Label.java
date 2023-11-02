@@ -1,20 +1,24 @@
 package br.com.douggo.mediator.swing.components;
 
+import br.com.douggo.mediator.swing.mediator.Mediator;
+
 import javax.swing.*;
+import java.awt.*;
 
 public class Label extends JLabel {
 
     private static final long serialVersionUID = 4785399240274598325L;
 
-    private State state;
+    private Mediator mediator;
 
-    public Label(State state) {
+    public Label(Mediator mediator) {
         super("Times clicked: 0");
-        this.state = state;
+        this.setFont(new Font(this.getFont().getName(), Font.BOLD, 30));
+        this.mediator = mediator;
     }
 
     public void refresh() {
-        super.setText("Times clicked: " + state.getCounter());
+        super.setText("Times clicked: " + mediator.getCounterValue());
     }
 
 
