@@ -3,8 +3,6 @@ package br.com.douggo.mediator.swing.components;
 import br.com.douggo.mediator.swing.mediator.Mediator;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class AddButton extends JButton {
 
