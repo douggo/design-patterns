@@ -2,8 +2,6 @@ package br.com.douggo.iterator.tvChannel;
 
 import java.util.Iterator;
 import java.util.Objects;
-import java.util.Spliterator;
-import java.util.function.Consumer;
 
 public class IteratorChannel implements Iterator<Integer> {
 
