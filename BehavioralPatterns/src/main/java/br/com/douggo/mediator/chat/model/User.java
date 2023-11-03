@@ -35,6 +35,6 @@ public class User {
     }
 
     public void receiveMessage(String message, User from) {
-        System.out.println(String.format("'%s' has received message ''%s from '%s'", this.name, message, from.getName()));
+        System.out.println(String.format("'%s' has received message '%s' from '%s'", this.name, message, from.getName()));
     }
 }

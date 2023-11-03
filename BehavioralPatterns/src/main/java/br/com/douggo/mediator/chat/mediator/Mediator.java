@@ -26,7 +26,7 @@ public abstract class Mediator {
                 if (user.getName().equalsIgnoreCase(from.getName())) {
                     continue;
                 }
-                user.receiveMessage(getMessage(message, to, from), from);
+                user.receiveMessage(getMessage(message, user, from), from);
             }
         } else {
             to.receiveMessage(getMessage(message, to, from), from);

@@ -1,6 +1,8 @@
 package br.com.douggo.mediator.chat;
 
+import br.com.douggo.mediator.chat.mediator.ChatMediator;
 import br.com.douggo.mediator.chat.mediator.Mediator;
+import br.com.douggo.mediator.chat.mediator.TranslatorMediator;
 import br.com.douggo.mediator.chat.model.EnglishUser;
 import br.com.douggo.mediator.chat.model.PortugueseUser;
 import br.com.douggo.mediator.chat.model.User;
@@ -8,7 +10,8 @@ import br.com.douggo.mediator.chat.model.User;
 public class Client {
 
     public static void main(String[] args) {
-        Mediator chatRoom = null;
+        //Mediator chatRoom = new ChatMediator();
+        Mediator chatRoom = new TranslatorMediator();
 
         User alan = new EnglishUser("Alan", chatRoom);
         User jose = new PortugueseUser("José", chatRoom);
@@ -20,7 +23,7 @@ public class Client {
         chatRoom.addUser(maria);
 
         alan.sendMessage("Hello");
-        maria.sendMessage("Oi");
+        maria.sendMessage("Oi", alan);
 
         chatRoom.removeUser(sue);
 
