@@ -10,7 +10,12 @@ public class Doorman extends Subject {
 	}
 	
 	public void setStatus(boolean newStatus) {
-		this.status = newStatus;
+		if (this.status != newStatus) {
+			this.status = newStatus;
+		}
+		if (this.status) {
+			this.notifyObservers();
+		}
 	}
 
 	@Override

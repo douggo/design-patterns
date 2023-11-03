@@ -15,10 +15,10 @@ public class Client {
 		doorman.addObserver(friend);
 
 		/* Husband did not come yet */
-		doorman.notifyObservers();
+		doorman.setStatus(false);
 
 		/* Doorman saw husband enter through the door */
+		System.out.println("Husband is coming!");
 		doorman.setStatus(true);
-		doorman.notifyObservers();
 	}
 }
