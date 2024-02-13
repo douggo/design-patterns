@@ -11,12 +11,15 @@ public class Client {
 	public static void main(String[] args) {
 		Folder parentFolder = new Folder("Musics", createFilesForParentFolder());
 
-		String absolutePath = System.getProperty("user.dir");
-		java.io.File file = new java.io.File(absolutePath + java.io.File.separator + "diagramas");
-		Folder anotherParentFolder = new Folder("diagramas", Collections.singletonList(getFoldersFromUbuntuFile(file)));
+		String path = "/home/douglas.silva/betha-projects/front/ui-studio";
 
-		parentFolder.print("");
-		System.out.println("----------");
+
+		String absolutePath = System.getProperty("user.dir");
+		java.io.File file = new java.io.File(path);
+		Folder anotherParentFolder = new Folder("ui-studio", Collections.singletonList(getFoldersFromUbuntuFile(file)));
+
+		//parentFolder.print("");
+		//System.out.println("----------");
 		anotherParentFolder.print("");
 	}
 
@@ -43,6 +46,8 @@ public class Client {
 	}
 
 	private static FileSystemItem getFoldersFromUbuntuFile(java.io.File file) {
+		List<String> blacklistFolders = Arrays.asList("dist", "node_modules", ".git");
+
 		if (!file.isDirectory()) {
 			return new File(file.getName());
 		}
@@ -50,7 +55,7 @@ public class Client {
 		List<FileSystemItem> children = new ArrayList<>();
 		java.io.File[] files = file.listFiles();
 
-		if (Objects.isNull(files)) {
+		if (Objects.isNull(files) || blacklistFolders.contains(file.getName())) {
 			return new Folder(file.getName(), new ArrayList<>());
 		}
 
