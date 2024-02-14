@@ -1,6 +1,6 @@
 package br.com.douggo.template.persist;
 
-import br.com.cod3r.template.persist.models.UserModel;
+import br.com.douggo.template.persist.models.UserModel;
 
 public class Client {
 

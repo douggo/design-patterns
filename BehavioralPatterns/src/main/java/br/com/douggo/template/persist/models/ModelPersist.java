@@ -25,7 +25,7 @@ public abstract class ModelPersist {
 	}
 
 	protected abstract void preSave();
-	protected  void postSave() {
+	protected void postSave() {
 		// Override this method if you want to add a new behavior
 	}
 	protected void prePersist() {
